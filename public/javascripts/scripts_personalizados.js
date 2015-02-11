@@ -15,10 +15,8 @@ $(".ckDia").parent().on('click', function(event) {
 //UpdateButton Function
 $(".updateButton").on('click', function(event) {
     var id = $(event.currentTarget).data("id");
-    window.location = "../alunolist/"+id;
+    window.location = "../home/"+id;
 //Atribui o valor do ID ao botao  $(event.currentTarget).val(id);
-    
+
 	}
 );
-
-
