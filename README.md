@@ -1,13 +1,29 @@
-passport-mongo
+VanOnline
 ==============
 
-This repository serves as an example of a basic Node.js application which is using [Passport](http://passportjs.org/) as the authentication middleware for authenticating against a locally configured Mongo backend
+Este é um projeto voltado para quem realiza transporte escolares.
+O projeto foi construido usando NodeJS, HTML5 e MongoDB.
+Demo: [Vanonline](https://van-online.herokuapp.com)
 
-Steps to run the app
+Instalação
 =====================
-* After cloning the repo, install the dependencies by running **npm install**
-* To start the server, run **npm start** on the base directory
+1 - Download ou Clone o repo
+2 - Extraia e navegue a pasta pela linha de comando
+3 - npm install
+4 - Modifique o arquivo db.js no parametro url para a base de dados desejada. (Opcional)
+5 - npm start
+6 - Visite o endereco: http://localhost:3000/
 
-Perquisites
+Pre-requisitos
 ============
-The server assumes that you have a local mongo instance running. This means if you have mongo installed locally, all you need to do is configure the db.js file correctly and run the mongod daemon
+
+1 - Ter o NodeJS instalado no hospedeiro
+2 - Ter acesso a internet
+
+Consideracoes
+============
+
+Este projeto foi feito com intuito de ser redistribuido a quem desejar, servindo como fonte de estudos ou aplicacao real.
+Sinta-se livre para contribuir ou criticar o projeto.
+
+Duvidas, lucianopf@outlook.com.
