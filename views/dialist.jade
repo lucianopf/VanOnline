@@ -1,0 +1,202 @@
+extends layout
+
+block content
+    nav.navbar.navbar-default
+        div.container-fluid
+            div.navbar-header
+                button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar")
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar                        
+                a.navbar-brand(href="/")  VanOnline
+            div.collapse.navbar-collapse(id="myNavbar")
+                ul.nav.navbar-nav
+                  li
+                      a(href="/home")    Alunos
+                  li.active
+                      a(href="/dialist")      Pauta Diaria 
+                  li
+                      a(href="/newaluno")     Cadastrar Aluno
+                  li
+                      a(href='/signout')     Sair
+    ul.list-unstyled
+        if dia == 1
+            h2.
+                Segunda-Feira:
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".mv")    Irão pela Manhã
+                ul.collapse.mv
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.seg_manha_vai == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".mvo")    Voltarão pela Manhã
+                ul.collapse.mvo
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.seg_manha_volta == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".nv")    Irão pela Noite
+                ul.collapse.nv
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.seg_noite_vai == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".nvo")    Voltarão pela Noite
+                ul.collapse.nvo
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.seg_noite_volta == "on"
+                            li.clicavel    #{aluno.nome}
+        if dia == 2
+            h2.
+                Terça-Feira:
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".mv")    Irão pela Manhã
+                ul.collapse.mv
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.ter_manha_vai == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".mvo")    Voltarão pela Manhã
+                ul.collapse.mvo
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.ter_manha_volta == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".nv")    Irão pela Noite
+                ul.collapse.nv
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.ter_noite_vai == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".nvo")    Voltarão pela Noite
+                ul.collapse.nvo
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.ter_noite_volta == "on"
+                            li.clicavel    #{aluno.nome}
+        if dia == 3
+            h2.
+                Quarta-Feira:
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".mv")    Irão pela Manhã
+                ul.collapse.mv
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.qua_manha_vai == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".mvo")    Voltarão pela Manhã
+                ul.collapse.mvo
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.qua_manha_volta == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".nv")    Irão pela Noite
+                ul.collapse.nv
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.qua_noite_vai == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".nvo")    Voltarão pela Noite
+                ul.collapse.nvo
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.qua_noite_volta == "on"
+                            li.clicavel    #{aluno.nome}
+        if dia == 4
+            h2.
+                Quinta-Feira:
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".mv")    Irão pela Manhã
+                ul.collapse.mv
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.qui_manha_vai == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".mvo")    Voltarão pela Manhã
+                ul.collapse.mvo
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.qui_manha_volta == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".nv")    Irão pela Noite
+                ul.collapse.nv
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.qui_noite_vai == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".nvo")    Voltarão pela Noite
+                ul.collapse.nvo
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.qui_noite_volta == "on"
+                            li.clicavel    #{aluno.nome}
+        if dia == 5
+            h2.
+                Sexta-Feira:
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".mv")    Irão pela Manhã
+                ul.collapse.mv
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.sex_manha_vai == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".mvo")    Voltarão pela Manhã
+                ul.collapse.mvo
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.sex_manha_volta == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".nv")    Irão pela Noite
+                ul.collapse.nv
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.sex_noite_vai == "on"
+                            li.clicavel    #{aluno.nome}
+            p       
+            li
+                button.btn.btn-default.fullwidth(type="button" data-toggle="collapse" data-target=".nvo")    Voltarão pela Noite
+                ul.collapse.nvo
+                    p                 
+                    each aluno, i in user.alunos 
+                        if aluno.horario.sex_noite_volta == "on"
+                            li.clicavel    #{aluno.nome}
+        if dia > 5
+            li
+                h4   Não irá ninguem hoje.
+    script(src='/javascripts/scripts_personalizados.js')
+    script(src='javascripts/bootstrap.min.js')

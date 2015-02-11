@@ -1,0 +1,115 @@
+extends layout
+
+block content
+    nav.navbar.navbar-default
+        div.container-fluid
+            div.navbar-header
+                button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar")
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar                        
+                a.navbar-brand(href="/")  VanOnline
+            div.collapse.navbar-collapse(id="myNavbar")
+                ul.nav.navbar-nav
+                  li
+                      a(href="/home")    Alunos
+                  li
+                      a(href="/dialist")      Pauta Diaria 
+                  li.active
+                      a(href="/newaluno")     Cadastrar Aluno
+                  li
+                      a(href='/signout')     Sair
+    h2.
+        Cadastrar Aluno
+    form#formAddAluno(name="addaluno",method="post",action="/addaluno",role="form")
+        div.form-group
+            label(for="nome") Nome: 
+            input#inputNome.form-control(type="text", placeholder="", name="nome")
+        div.form-group
+            label(for="curso") Curso:
+            select.form-control(name="curso")
+                each cur in ["Administração","Arquitetura e Urbanismo","Artes Cênicas","Ciência da Computação","Ciências Biológicas","Ciências Contábeis","Comunicação Social - Publicidade e Propaganda","Design de Moda","Design de Produto (Desenho Industrial)","Direito","Educação Física (licenciatura e/ou bacharelado)","Enfermagem","Engenharia Ambiental","Engenharia Civil","Engenharia de Petróleo","Engenharia de Produção","Engenharia Elétrica","Engenharia Mecânica","Engenharia Química","Estética e Cosmética","Farmácia (Matutino)","Fisioterapia","Fonoaudiologia","Fotografia","Gastronomia","Geologia","Gestão de Recursos Humanos","Gestão Portuária","Jornalismo","Marketing","Medicina","Medicina Veterinária","Nutrição","Odontologia","Pedagogia","Psicologia","Relações Internacionais","Sistemas de informação"]
+                    option(value="#{cur}") #{cur}
+        div.form-group
+            label(for="turno") Turno: 
+            select.form-control(name="turno")
+                option(value="matutino") Matutino
+                option(value="noturno") Noturno 
+        div.form-group
+            label(for="valor") Mensalidade: 
+            input#inputValor.form-control(type="number", placeholder="", name="valor",min="0")
+        div.form-group
+            label(for="dia") Dia do pagamento:	
+            input#inputDia.form-control(type="number", placeholder="", name="dia",min="0" max="31")
+        p.form-group 
+            label(for="dias") Clique nas celulas para seleciona-las.
+        table.table.table-bordered.alert-info(align="center")
+            tbody
+                tr
+                   td.active  
+                       p    Turno
+                   td.active  
+                       p    Seg
+                   td.active  
+                       p    Ter
+                   td.active  
+                       p    Qua
+                   td.active  
+                       p    Qui
+                   td.active  
+                       p    Sex
+                tr
+                   td.active  
+                       p    Mat - Ida
+                   td.active.danger
+                       input(type="checkbox", name="d1_t1" class="ckDia")
+                   td.active.danger
+                       input(type="checkbox", name="d2_t1" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d3_t1" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d4_t1" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d5_t1" class="ckDia")    
+                tr
+                   td.active  
+                       p    Mat - Volta
+                   td.active.danger 
+                       input(type="checkbox", name="d1_t2" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d2_t2" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d3_t2" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d4_t2" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d5_t2" class="ckDia")    
+                tr
+                   td.active  
+                       p    Not - Ida
+                   td.active.danger 
+                       input(type="checkbox", name="d1_t3" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d2_t3" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d3_t3" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d4_t3" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d5_t3" class="ckDia")    
+                tr
+                   td.active  
+                       p    Not - Volta
+                   td.active.danger 
+                       input(type="checkbox", name="d1_t4" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d2_t4" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d3_t4" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d4_t4" class="ckDia")    
+                   td.active.danger 
+                       input(type="checkbox", name="d5_t4" class="ckDia")    
+        button#btnSubmit.btn.btn-default.fullwidth(type="submit") Cadastrar
+    script(src='/javascripts/scripts_personalizados.js')
+    script(src='javascripts/bootstrap.min.js')

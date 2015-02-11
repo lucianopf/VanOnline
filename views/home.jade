@@ -1,0 +1,193 @@
+extends layout
+
+block content
+    nav.navbar.navbar-default
+        div.container-fluid
+            div.navbar-header
+                button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar")
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar                        
+                a.navbar-brand(href="/")  VanOnline
+            div.collapse.navbar-collapse(id="myNavbar")
+                ul.nav.navbar-nav
+                    li.active
+                        a(href="/home")    Alunos
+                    li
+                        a(href="/dialist")      Pauta Diaria 
+                    li
+                        a(href="/newaluno")     Cadastrar Aluno
+                    li
+                        a(href='/signout')     Sair
+    h2.
+        Lista de Alunos
+    ul.list-unstyled
+        each aluno in user.alunos  
+            form#formAddAluno(name="removealuno",method="post",action="/removealuno",role="form")
+                li.nomes(data-toggle="collapse" data-target="##{aluno._id}")
+                    button.btn.btn-default.fullwidth(type="button")   #{aluno.nome}
+                    div.collapse(id= "#{aluno._id}" )
+                        p    
+                        input#inputId.form-control.inputhidden(type="text", name="id_aluno" , value="#{aluno._id}")
+                        p   Nome: #{aluno.nome}
+                        p   Curso: #{aluno.curso}
+                        p   Turno: #{aluno.turno}
+                        p   Mensalidade: #{aluno.valor}
+                        p   Dia de Pagamento: #{aluno.dia_pagamento}
+                          table.table.table-bordered(data-toggle="table")
+                              tbody
+                                  tr
+                                     td.active 
+                                         p    Turno
+                                     td.active 
+                                         p    Seg
+                                     td.active 
+                                         p    Ter
+                                     td.active 
+                                         p    Qua
+                                     td.active 
+                                         p    Qui
+                                     td.active 
+                                         p    Sex
+                                  tr
+                                     td.active 
+                                         p    Mat - Ida
+                                     if aluno.horario.seg_manha_vai == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.ter_manha_vai == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.qua_manha_vai == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.qui_manha_vai == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p  
+                                     if aluno.horario.sex_manha_vai == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p 
+                                  tr
+                                     td.active 
+                                         p    Mat - Volta
+                                     if aluno.horario.seg_manha_volta == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.ter_manha_volta == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.qua_manha_volta == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.qui_manha_volta == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.sex_manha_volta == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                  tr
+                                     td.active 
+                                         p    Not - Ida
+                                     if aluno.horario.seg_noite_vai == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.ter_noite_vai == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.qua_noite_vai == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.qui_noite_vai == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.sex_noite_vai == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                  tr
+                                     td.active 
+                                         p    Not - Volta
+                                     if aluno.horario.seg_noite_volta == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.ter_noite_volta == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.qua_noite_volta == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                     if aluno.horario.qui_noite_volta == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p 
+                                     if aluno.horario.sex_noite_volta == "on"
+                                         td.success 
+                                             p
+                                     else
+                                         td.danger 
+                                             p
+                                br
+                            button#btnSubmit.btn.btn-danger.fullwidth.left(type="submit") Remover Aluno
+                          p      
+                          input.btn.btn-success.fullwidth(type="button" data-id="#{aluno._id}" class="updateButton" value="Atualizar Cadastro")
+                        hr
+                    p    
+      script(src='/javascripts/scripts_personalizados.js')
+      script(src='javascripts/jquery.min.js')
+      script(src='javascripts/bootstrap.min.js')
+            
