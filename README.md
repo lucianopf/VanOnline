@@ -2,7 +2,6 @@ VanOnline
 ==============
 
 Este é um projeto voltado para quem realiza transporte escolares.
-
 O projeto foi construido usando NodeJS, HTML5 e MongoDB.
 
 Demo: [Vanonline](https://van-online.herokuapp.com)
