@@ -14,13 +14,13 @@ module.exports = function(passport){
                 User.findOne({ 'username' :  username }, function(err, user) {
                     // In case of any error, return using the done method
                     if (err){
-                        console.log('Error in SignUp: '+err);
+                        console.log('Erro no registro: '+err);
                         return done(err);
                     }
                     // already exists
                     if (user) {
-                        console.log('User already exists with username: '+username);
-                        return done(null, false, req.flash('message','User Already Exists'));
+                        console.log('Ja existe um usuario com o nome: '+username);
+                        return done(null, false, req.flash('message','Usuario ja cadastrado.'));
                     } else {
                         // if there is no user with that email
                         // create the user
@@ -36,7 +36,7 @@ module.exports = function(passport){
                         // save the user
                         newUser.save(function(err) {
                             if (err){
-                                console.log('Error in Saving user: '+err);
+                                console.log('Erro ao savar o usuario: '+err);
                                 throw err;
                             }
                             console.log('User Registration succesful');
