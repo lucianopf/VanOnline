@@ -9,5 +9,25 @@ html
     link(rel='stylesheet', href='/stylesheets/style_sistema.css')
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
       
-  body
+  body.main
+  nav.navbar.navbar-default
+      div.container-fluid
+          div.navbar-header
+              button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar")
+                  span.icon-bar
+                  span.icon-bar
+                  span.icon-bar                        
+              a.navbar-brand(href="/")  VanOnline
+          div.collapse.navbar-collapse(id="myNavbar")
+              ul.nav.navbar-nav
+                li
+                    a(href="/home")    Alunos
+                li
+                    a(href="/dialist")      Pauta Diaria 
+                li
+                    a(href="/newaluno")     Cadastrar Aluno
+                li
+                    a(href="/financeiro")     Financeiro
+                li
+                    a(href='/signout')     Sair
     block content

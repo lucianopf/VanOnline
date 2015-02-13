@@ -20,3 +20,12 @@ $(".updateButton").on('click', function(event) {
 
 	}
 );
+
+
+//Ativador de menu
+$(document).on("ready",function(){
+	url = window.location.pathname;
+	console.log(url);
+	$("a[href*='"+window.location.pathname+"']").parent().addClass('active');
+
+})

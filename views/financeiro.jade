@@ -1,30 +1,19 @@
 extends layout
 
 block content
-    nav.navbar.navbar-default
-        div.container-fluid
-            div.navbar-header
-                button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar")
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar                        
-                a.navbar-brand(href="/")  VanOnline
-            div.collapse.navbar-collapse(id="myNavbar")
-                ul.nav.navbar-nav
-                  li
-                      a(href="/home")    Alunos
-                  li
-                      a(href="/dialist")      Pauta Diaria 
-                  li
-                      a(href="/newaluno")     Cadastrar Aluno
-                  li.active
-                      a(href="/financeiro")     Financeiro
-                  li
-                      a(href='/signout')     Sair
-    h2.
-        Financeiro
-          p Total: 
-        
+
+    h2  Financeiro
+    - var total = 0
+    - var diasReceber = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    each aluno in user.alunos
+      - total = total + parseInt(aluno.valor)
+      - diasReceber[parseInt(aluno.dia_pagamento)-1] = parseInt(aluno.valor)
+    each dia,i in diasReceber
+      ul.clicavel
+        if dia!=0
+          li
+            p Dia #{i+1}: R$#{dia}
+    h5 Total a receber no mes: R$#{total}
       
     script(src='/javascripts/scripts_personalizados.js')
     script(src='javascripts/bootstrap.min.js')

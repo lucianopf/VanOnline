@@ -1,24 +1,6 @@
 extends layout
 
 block content
-    nav.navbar.navbar-default
-        div.container-fluid
-            div.navbar-header
-                button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar")
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar                        
-                a.navbar-brand(href="/")  VanOnline
-            div.collapse.navbar-collapse(id="myNavbar")
-                ul.nav.navbar-nav
-                  li
-                      a(href="/home")    Alunos
-                  li
-                      a(href="/dialist")      Pauta Diaria 
-                  li.active
-                      a(href="/newaluno")     Cadastrar Aluno
-                  li
-                      a(href='/signout')     Sair
     h2.
         Cadastrar Aluno
     form#formAddAluno(name="addaluno",method="post",action="/addaluno",role="form")
