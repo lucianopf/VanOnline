@@ -42,6 +42,11 @@ module.exports = function(passport){
 		res.render('home', { user: req.user });
 	});
 
+	/* GET Financeiro */
+	router.get('/financeiro', isAuthenticated, function(req, res){
+		res.render('financeiro', { user: req.user });
+	});
+
 	//Get Aluno:id
 	router.get('/home/:aluno_id', isAuthenticated,function(req, res) {
 				tam = req.user.alunos.length;
